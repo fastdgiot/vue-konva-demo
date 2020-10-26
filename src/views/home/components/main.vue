@@ -3,8 +3,8 @@
     <div id="container" ref="container" class="container" />
     <div class="page_but">
       <el-row>
-        <el-button type="primary" @click="addLayer()">新建图层</el-button>
-        <el-button type="primary" @click="addDlock()">新建图层</el-button>
+        <el-button type="primary" @click="addLayer">新建图层</el-button>
+        <el-button type="primary" @click="addDlock">新建图层</el-button>
       </el-row>
     </div>
   </div>
