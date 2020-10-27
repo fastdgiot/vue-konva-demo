@@ -5,6 +5,7 @@
       <el-row>
         <el-button type="primary" @click="addLayer">新建图层</el-button>
         <el-button type="primary" @click="addDlock">新建图层</el-button>
+        <el-button type="primary" @click="test2">新建图层</el-button>
       </el-row>
     </div>
   </div>
@@ -19,6 +20,16 @@ export default {
   data() {
     return {
       type: 'primary'
+    }
+  },
+  created() {
+    this.$on('test2', (name) => {
+      console.log(`接收参数${name}`)
+    })
+  },
+  methods: {
+    test2() {
+      console.log('触发test2')
     }
   }
 }
