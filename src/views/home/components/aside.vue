@@ -17,7 +17,6 @@ export default {
   methods: {
     test() {
       console.log('出发aside方法, test')
-      this.$emit('test2', '参数222')
     }
   }
 }

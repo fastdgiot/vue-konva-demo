@@ -1,11 +1,10 @@
 <template>
-  <div class="main">
+  <div class="app-container">
     <div id="container" ref="container" class="container" />
     <div class="page_but">
       <el-row>
         <el-button type="primary" @click="addLayer">新建图层</el-button>
         <el-button type="primary" @click="addDlock">新建图层</el-button>
-        <el-button type="primary" @click="test2">新建图层</el-button>
       </el-row>
     </div>
   </div>
@@ -23,20 +22,14 @@ export default {
     }
   },
   created() {
-    this.$on('test2', (name) => {
-      console.log(`接收参数${name}`)
-    })
   },
   methods: {
-    test2() {
-      console.log('触发test2')
-    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.main {
+.app-container {
   width: 100%;
   height: 100%;
   display: flex;
@@ -45,7 +38,7 @@ export default {
 
   .container {
     width: 100%;
-    height: 100%;
+    height: 420px;
     border: 1px solid red;
     background-color: antiquewhite;
   }
