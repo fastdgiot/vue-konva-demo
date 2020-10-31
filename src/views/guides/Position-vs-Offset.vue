@@ -95,7 +95,6 @@ export default {
       } else {
         this.angularSpeed = this.angularSpeed - 40
       }
-      console.log(this.angularSpeed)
     }
   }
 }

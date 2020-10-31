@@ -18,7 +18,7 @@ npm install vue-konva konva --save
 ```
 
 #### 注:
-1. 本项目网络部署地址
+1. 本项目网络部署地址[http://yangyushu.gitee.io/vue-konva-demo](http://yangyushu.gitee.io/vue-konva-demo)
 1. 本项目只使用了 [konvajs](https://konvajs.org/)  ，没有使用`vue-konva`
 1. 本项目引用了`vue-konva`，目前并没有使用，之后会做`vue-konva`相关内容
 1. 本项目页面根据`konvajs`的官网讲解顺序 [https://konvajs.org/docs/](https://konvajs.org/docs/) 制作
