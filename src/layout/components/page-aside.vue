@@ -1,7 +1,7 @@
 <template>
   <div class="aside">
     <h5>路由</h5>
-    <el-menu default-active="2" class="el-menu-vertical-demo">
+    <el-menu default-active="2" class="el-menu-vertical-demo" unique-opened>
       <el-submenu v-for="item in router" :key="item.name" :index="item.name">
         <template slot="title">
           <i class="el-icon-setting" />
@@ -47,6 +47,13 @@ export default {
             { name: '六边形', route: 'RegularPolygon' },
             { name: '箭头', route: 'Arrow' },
             { name: '模型', route: 'Shape' } // 重点,这个可以直接画出想要的形状
+          ]
+        },
+        {
+          name: '定位偏移',
+          route: 'guides',
+          childrens: [
+            { name: '定位和偏移', route: 'Position-vs-Offset' }
           ]
         }
       ]

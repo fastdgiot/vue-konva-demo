@@ -6,13 +6,15 @@ Vue.use(VueRouter)
 import layout from '@/layout/index'
 // shapes 创建形状
 import shapes from './moudle/SHAPES'
+import guides from './moudle/GUIDES'
+import styling from './moudle/STYLING'
 
 const routes = [
   {
     path: '/',
     redirect: '/rect',
     component: layout,
-    children: [...shapes]
+    children: [...shapes, ...guides, ...styling]
   }
 ]
 
