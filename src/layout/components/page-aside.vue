@@ -55,6 +55,19 @@ export default {
           childrens: [
             { name: '定位和偏移', route: 'Position-vs-Offset' }
           ]
+        }, {
+          name: '样式变化',
+          route: 'styling',
+          childrens: [
+            { name: '填充样式', route: 'Fill' },
+            { name: '边框样式', route: 'Stroke' },
+            { name: '透明度', route: 'Opacity' },
+            { name: '阴影', route: 'Shadow' },
+            { name: '连线方式', route: 'Line-Join' },
+            { name: '显示隐藏', route: 'Hide-and-Show' },
+            { name: '鼠标样式', route: 'Mouse-Cursor-Styles' },
+            { name: '混合模式', route: 'Blend-Mode' }
+          ]
         }
       ]
     }

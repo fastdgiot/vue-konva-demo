@@ -38,10 +38,15 @@
 
   .container {
     width: 100%;
-    height: 300px;
+    height: 440px;
     margin-bottom: 10px;
     border: 1px solid red;
     background-color: antiquewhite;
   }
+}
+
+// Chrome隐藏滚动条
+::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
 }
 </style>

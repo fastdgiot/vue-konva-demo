@@ -30,7 +30,7 @@ export default {
       this.pageStage = new Konva.Stage({
         container: 'container',
         width: main.offsetWidth,
-        height: main.offsetWidth / 3
+        height: 440
       })
       this.addLayer()
     },
