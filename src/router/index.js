@@ -2,12 +2,17 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
+// 框子
+import layout from '@/layout/index'
+// shapes 创建形状
+import shapes from './moudle/SHAPES'
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: () => import('@/views/home/home')
+    redirect: '/rect',
+    component: layout,
+    children: [...shapes]
   }
 ]
 
