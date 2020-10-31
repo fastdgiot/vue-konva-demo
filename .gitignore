@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
-/dist
+# 上传dist文件夹，用于网络部署
+# /dist
 
 
 # local env files

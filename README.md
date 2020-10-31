@@ -28,5 +28,6 @@ npm install vue-konva konva --save
 - 完成基础图形模块
 - 完成定位偏移模块
 - 完成样式改变模块
+- Gitee Pages部署
 
 
