@@ -49,4 +49,10 @@
 ::-webkit-scrollbar {
   display: none; /* Chrome Safari */
 }
+
+// span不能选中
+h1, span, li {
+  -webkit-user-select: none;
+  user-select: none;
+}
 </style>

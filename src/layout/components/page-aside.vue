@@ -68,7 +68,27 @@ export default {
             { name: '鼠标样式', route: 'Mouse-Cursor-Styles' },
             { name: '混合模式', route: 'Blend-Mode' }
           ]
+        }, {
+          name: '事件监听',
+          route: 'events',
+          childrens: [
+            { name: '鼠标移入', route: 'Shape-Events' },
+            { name: '鼠标移入（图片）', route: 'Image-Events' },
+            { name: '取消监听', route: 'Remove-Event-Listener' },
+            { name: '取消监听（通过名称）', route: 'Remove-Event-Listener-by-Name' },
+            { name: '区域监听', route: 'Custom-Hit-Function' },
+            { name: '父级监听', route: 'Event-Delegation' },
+            { name: '键盘监听', route: 'Keyboard-events' }
+          ]
+        },
+        {
+          name: '拖放事件',
+          route: 'DragAndDrop',
+          childrens: [
+            { name: '鼠标移入', route: 'Shape-Events' }
+          ]
         }
+        // （）
       ]
     }
   },

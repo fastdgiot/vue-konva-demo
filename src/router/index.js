@@ -4,17 +4,19 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 // 框子
 import layout from '@/layout/index'
-// shapes 创建形状
-import shapes from './moudle/SHAPES'
-import guides from './moudle/GUIDES'
-import styling from './moudle/STYLING'
+// 各个模块路由
+import SHAPES from '@/router/moudle/SHAPES'
+import GUIDES from '@/router/moudle/GUIDES'
+import STYLING from '@/router/moudle/STYLING'
+import EVENTS from '@/router/moudle/EVENTS'
+import DRAGANDDROP from '@/router/moudle/DRAG-AND-DROP'
 
 const routes = [
   {
     path: '/',
     redirect: '/rect',
     component: layout,
-    children: [...shapes, ...guides, ...styling]
+    children: [...SHAPES, ...GUIDES, ...STYLING, ...EVENTS, ...DRAGANDDROP]
   }
 ]
 
