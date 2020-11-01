@@ -10,13 +10,14 @@ import GUIDES from '@/router/moudle/GUIDES'
 import STYLING from '@/router/moudle/STYLING'
 import EVENTS from '@/router/moudle/EVENTS'
 import DRAGANDDROP from '@/router/moudle/DRAG-AND-DROP'
+import SELECTANDTRANSFORM from '@/router/moudle/SELECT-AND-TRANSFORM'
 
 const routes = [
   {
     path: '/',
     redirect: '/rect',
     component: layout,
-    children: [...SHAPES, ...GUIDES, ...STYLING, ...EVENTS, ...DRAGANDDROP]
+    children: [...SHAPES, ...GUIDES, ...STYLING, ...EVENTS, ...DRAGANDDROP, ...SELECTANDTRANSFORM]
   }
 ]
 

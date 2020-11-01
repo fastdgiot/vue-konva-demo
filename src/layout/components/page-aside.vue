@@ -85,7 +85,23 @@ export default {
           name: '拖放事件',
           route: 'DragAndDrop',
           childrens: [
-            { name: '鼠标移入', route: 'Shape-Events' }
+            { name: '基础拖放', route: 'Drag-and-Drop' },
+            { name: '整组拖放', route: 'Drag-and-Drop-a-Group' },
+            { name: '限定方向', route: 'Simple-Drag-Bounds' },
+            { name: '限定位置', route: 'Complex-Drag-and-Drop-Bounds' },
+            { name: '单个拖动', route: 'Drop-Events' }
+          ]
+        },
+        {
+          name: '选择变形',
+          route: 'SelectAndTransform',
+          childrens: [
+            { name: '基础展示', route: 'Select-and-Transform' },
+            { name: '中心扩展', route: 'Centered-Scaling' },
+            { name: '保持比例', route: 'Keep-Ratio' },
+            { name: '选择器样式', route: 'Select-and-Transform-Styling' },
+            { name: '监听tr属性', route: 'Transform-Events' },
+            { name: '调整大小限制', route: 'Transform-Limits' }
           ]
         }
         // （）
