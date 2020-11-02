@@ -33,5 +33,25 @@ export default [
     path: '/Transform-Limits',
     name: 'Transform-Limits',
     component: () => import('@/views/SelectAndTransform/Transform-Limits')
+  },
+  {
+    path: '/Centered-Scaling2',
+    name: 'Centered-Scaling2',
+    component: () => import('@/views/SelectAndTransform/Centered-Scaling2')
+  },
+  {
+    path: '/Transform-Events2',
+    name: 'Transform-Events2',
+    component: () => import('@/views/SelectAndTransform/Transform-Events2')
+  },
+  {
+    path: '/Resize-Text',
+    name: 'Resize-Text',
+    component: () => import('@/views/SelectAndTransform/Resize-Text')
+  },
+  {
+    path: '/Resize-Text2',
+    name: 'Resize-Text2',
+    component: () => import('@/views/SelectAndTransform/Resize-Text2')
   }
 ]

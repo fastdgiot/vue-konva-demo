@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <div><h1>通过父级监听事件</h1></div>
+    <div><h1>旋转捕捉</h1></div>
     <div id="container" ref="container" class="container" />
   </div>
 </template>
@@ -10,22 +10,16 @@ import { konva } from '@/mixins'
 import Konva from 'konva'
 
 export default {
-  name: 'EventDelegation',
+  name: 'CenteredScaling2',
   mixins: [konva],
   data() {
     return {
-      propStyle: {
-        x: 240,
-        y: 120,
-        numPoints: 15,
-        innerRadius: 40,
-        outerRadius: 70,
-        fill: 'blue',
-        scale: {
-          x: 2,
-          y: 0.5
-        },
-        name: 'my star'
+      textStyle: {
+        x: 50,
+        y: 70,
+        fontSize: 30,
+        text: '旋转该文本',
+        draggable: true
       }
     }
   },
@@ -41,14 +35,15 @@ export default {
      */
     addElem() {
       const layer = this.pageLayer[0].layer
-      const prop = new Konva.Star(this.propStyle)
-      layer.on('click', (evt) => {
-        const shape = evt.target
-        this.$message({
-          message: `点击了${shape.name()}`
-        })
+      const prop = new Konva.Text(this.textStyle)
+      const tr1 = new Konva.Transformer({
+        nodes: [prop],
+        centeredScaling: true,
+        rotationSnaps: [0, 90, 180, 270],
+        resizeEnabled: false
       })
       layer.add(prop)
+      layer.add(tr1)
       layer.batchDraw()
     }
   }

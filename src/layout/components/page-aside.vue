@@ -101,7 +101,11 @@ export default {
             { name: '保持比例', route: 'Keep-Ratio' },
             { name: '选择器样式', route: 'Select-and-Transform-Styling' },
             { name: '监听tr属性', route: 'Transform-Events' },
-            { name: '调整大小限制', route: 'Transform-Limits' }
+            { name: '调整大小限制', route: 'Transform-Limits' },
+            { name: '旋转捕捉', route: 'Centered-Scaling2' },
+            { name: '增加元素', route: 'Transform-Events2' },
+            { name: '文本宽度', route: 'Resize-Text' },
+            { name: '重置比例', route: 'Resize-Text2' }
           ]
         }
         // （）
