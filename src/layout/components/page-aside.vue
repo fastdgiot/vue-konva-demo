@@ -107,6 +107,14 @@ export default {
             { name: '文本宽度', route: 'Resize-Text' },
             { name: '重置比例', route: 'Resize-Text2' }
           ]
+        },
+        {
+          name: '裁剪模块',
+          route: 'CLIPPING',
+          childrens: [
+            { name: '基础裁剪', route: 'Simple-Clipping' },
+            { name: '剪切方法', route: 'Clipping-Function' }
+          ]
         }
         // （）
       ]
