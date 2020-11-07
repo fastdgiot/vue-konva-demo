@@ -1,10 +1,15 @@
 <template>
   <div class="app-container">
-    <div><h1>图像模糊(0 - 100)</h1></div>
+    <div><h1>图像RGB</h1></div>
     <div id="container" ref="container" class="container" />
     <el-row>
       <el-col>
-        <el-slider v-model="sliderValue" @input="changeSlider"></el-slider>
+        <span class="demonstration">Red</span>
+        <el-slider v-model="value1" @input="val1" />
+        <span class="demonstration">Green</span>
+        <el-slider v-model="value2" @input="val2" />
+        <span class="demonstration">Blue</span>
+        <el-slider v-model="value3" @input="val3" />
       </el-col>
     </el-row>
   </div>
@@ -15,14 +20,13 @@ import { konva } from '@/mixins'
 import Konva from 'konva'
 
 export default {
-  name: 'BlurImage',
+  name: 'RGBImage',
   mixins: [konva],
   data() {
     return {
-      layer: null,
-      lion: null,
-      // 滑块默认值
-      sliderValue: 20
+      value1: '',
+      value2: '',
+      value3: ''
     }
   },
   created() {
@@ -44,20 +48,26 @@ export default {
           image: img,
           x: 80,
           y: 30,
-          blurRadius: this.sliderValue,
           draggable: true
         })
         lion.cache()
-        lion.filters([Konva.Filters.Blur])
+        lion.filters([Konva.Filters.RGB])
         layer.add(lion)
         layer.draw()
         this.lion = lion
         this.layer = layer
       }
     },
-    changeSlider(val) {
-      const lion = this.lion
-      lion.blurRadius(val)
+    val1(num) {
+      this.lion.red(num / 100 * 255)
+      this.layer.batchDraw()
+    },
+    val2(num) {
+      this.lion.green(num / 100 * 255)
+      this.layer.batchDraw()
+    },
+    val3(num) {
+      this.lion.blue(num / 100 * 255)
       this.layer.batchDraw()
     }
   }

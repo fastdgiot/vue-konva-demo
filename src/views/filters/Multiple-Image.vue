@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <div><h1>图像模糊(0 - 100)</h1></div>
+    <div><h1>图像Multiple</h1></div>
     <div id="container" ref="container" class="container" />
     <el-row>
       <el-col>
@@ -15,7 +15,7 @@ import { konva } from '@/mixins'
 import Konva from 'konva'
 
 export default {
-  name: 'BlurImage',
+  name: 'MultipleImage',
   mixins: [konva],
   data() {
     return {
@@ -44,11 +44,10 @@ export default {
           image: img,
           x: 80,
           y: 30,
-          blurRadius: this.sliderValue,
           draggable: true
         })
         lion.cache()
-        lion.filters([Konva.Filters.Blur])
+        lion.filters([Konva.Filters.Blur, Konva.Filters.Invert])
         layer.add(lion)
         layer.draw()
         this.lion = lion
@@ -56,8 +55,7 @@ export default {
       }
     },
     changeSlider(val) {
-      const lion = this.lion
-      lion.blurRadius(val)
+      this.lion.blurRadius(val / 5 * 2)
       this.layer.batchDraw()
     }
   }

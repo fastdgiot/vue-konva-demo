@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <div><h1>图像模糊(0 - 100)</h1></div>
+    <div><h1>图像Kaleidoscope</h1></div>
     <div id="container" ref="container" class="container" />
     <el-row>
       <el-col>
@@ -15,14 +15,14 @@ import { konva } from '@/mixins'
 import Konva from 'konva'
 
 export default {
-  name: 'BlurImage',
+  name: 'KaleidoscopeImage',
   mixins: [konva],
   data() {
     return {
       layer: null,
       lion: null,
       // 滑块默认值
-      sliderValue: 20
+      sliderValue: 0
     }
   },
   created() {
@@ -44,11 +44,11 @@ export default {
           image: img,
           x: 80,
           y: 30,
-          blurRadius: this.sliderValue,
           draggable: true
         })
         lion.cache()
-        lion.filters([Konva.Filters.Blur])
+        lion.filters([Konva.Filters.Kaleidoscope])
+        lion.kaleidoscopePower(3)
         layer.add(lion)
         layer.draw()
         this.lion = lion
@@ -56,8 +56,7 @@ export default {
       }
     },
     changeSlider(val) {
-      const lion = this.lion
-      lion.blurRadius(val)
+      this.lion.kaleidoscopeAngle(val)
       this.layer.batchDraw()
     }
   }

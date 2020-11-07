@@ -1,12 +1,7 @@
 <template>
   <div class="app-container">
-    <div><h1>图像模糊(0 - 100)</h1></div>
+    <div><h1>灰度图像</h1></div>
     <div id="container" ref="container" class="container" />
-    <el-row>
-      <el-col>
-        <el-slider v-model="sliderValue" @input="changeSlider"></el-slider>
-      </el-col>
-    </el-row>
   </div>
 </template>
 
@@ -15,14 +10,14 @@ import { konva } from '@/mixins'
 import Konva from 'konva'
 
 export default {
-  name: 'BlurImage',
+  name: 'GrayscaleImage',
   mixins: [konva],
   data() {
     return {
       layer: null,
       lion: null,
       // 滑块默认值
-      sliderValue: 20
+      sliderValue: 0
     }
   },
   created() {
@@ -44,21 +39,15 @@ export default {
           image: img,
           x: 80,
           y: 30,
-          blurRadius: this.sliderValue,
           draggable: true
         })
         lion.cache()
-        lion.filters([Konva.Filters.Blur])
+        lion.filters([Konva.Filters.Grayscale])
         layer.add(lion)
         layer.draw()
         this.lion = lion
         this.layer = layer
       }
-    },
-    changeSlider(val) {
-      const lion = this.lion
-      lion.blurRadius(val)
-      this.layer.batchDraw()
     }
   }
 }

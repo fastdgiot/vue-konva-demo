@@ -1,12 +1,7 @@
 <template>
   <div class="app-container">
-    <div><h1>图像模糊(0 - 100)</h1></div>
+    <div><h1>结合鼠标移入事件</h1></div>
     <div id="container" ref="container" class="container" />
-    <el-row>
-      <el-col>
-        <el-slider v-model="sliderValue" @input="changeSlider"></el-slider>
-      </el-col>
-    </el-row>
   </div>
 </template>
 
@@ -15,15 +10,10 @@ import { konva } from '@/mixins'
 import Konva from 'konva'
 
 export default {
-  name: 'BlurImage',
+  name: 'TweenFilter',
   mixins: [konva],
   data() {
-    return {
-      layer: null,
-      lion: null,
-      // 滑块默认值
-      sliderValue: 20
-    }
+    return {}
   },
   created() {
     // 因为第一个图层是10ms后创建的,避免图层未创建问题
@@ -44,21 +34,26 @@ export default {
           image: img,
           x: 80,
           y: 30,
-          blurRadius: this.sliderValue,
           draggable: true
         })
         lion.cache()
         lion.filters([Konva.Filters.Blur])
+        lion.blurRadius(10)
         layer.add(lion)
         layer.draw()
-        this.lion = lion
-        this.layer = layer
+        const tween = new Konva.Tween({
+          node: lion,
+          duration: 0.6,
+          blurRadius: 0,
+          easing: Konva.Easings.EaseInOut
+        })
+        lion.on('mouseover', function() {
+          tween.play()
+        })
+        lion.on('mouseout', function() {
+          tween.reverse()
+        })
       }
-    },
-    changeSlider(val) {
-      const lion = this.lion
-      lion.blurRadius(val)
-      this.layer.batchDraw()
     }
   }
 }

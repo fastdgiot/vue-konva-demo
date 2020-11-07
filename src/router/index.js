@@ -14,13 +14,31 @@ import SELECTANDTRANSFORM from '@/router/moudle/SELECT-AND-TRANSFORM'
 import CLIPPING from '@/router/moudle/CLIPPING'
 import GROUPS from '@/router/moudle/GROUPS'
 import FILTERS from '@/router/moudle/FILTERS'
+import TWEENS from '@/router/moudle/TWEENS'
+import ANIMATIONS from '@/router/moudle/ANIMATIONS'
+import EXPORT from '@/router/moudle/EXPORT'
+import PERFORMANCE from '@/router/moudle/PERFORMANCE'
 
 const routes = [
   {
     path: '/',
     redirect: '/rect',
     component: layout,
-    children: [...SHAPES, ...GUIDES, ...STYLING, ...EVENTS, ...DRAGANDDROP, ...SELECTANDTRANSFORM, ...CLIPPING, ...GROUPS, ...FILTERS]
+    children: [
+      ...SHAPES,
+      ...GUIDES,
+      ...STYLING,
+      ...EVENTS,
+      ...DRAGANDDROP,
+      ...SELECTANDTRANSFORM,
+      ...CLIPPING,
+      ...GROUPS,
+      ...FILTERS,
+      ...TWEENS,
+      ...ANIMATIONS,
+      ...EXPORT,
+      ...PERFORMANCE
+    ]
   }
 ]
 

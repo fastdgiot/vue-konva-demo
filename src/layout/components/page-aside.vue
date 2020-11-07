@@ -2,7 +2,7 @@
   <div class="aside">
     <h5>路由</h5>
     <el-menu default-active="2" class="el-menu-vertical-demo" unique-opened>
-      <el-submenu v-for="item in router" :key="item.name" :index="item.name">
+      <el-submenu v-for="item in router" :key="item.route" :index="item.name">
         <template slot="title">
           <i class="el-icon-setting" />
           <span>{{ item.name }}</span>
@@ -118,7 +118,7 @@ export default {
         },
         {
           name: '图层模块',
-          route: 'CLIPPING',
+          route: 'GROUPS',
           childrens: [
             { name: '分层', route: 'Shape-Layering' },
             { name: '更换容器', route: 'Move-Shape-to-Another-Container' }
@@ -128,7 +128,63 @@ export default {
           name: '过滤器',
           route: 'FILTERS',
           childrens: [
-            { name: '图像模糊', route: 'Blur-Image' }
+            { name: '图像模糊', route: 'Blur-Image' },
+            { name: '图像亮度', route: 'Brighten-Image' },
+            { name: '图像对比度', route: 'Contrast-Image' },
+            { name: '图像浮雕', route: 'Emboss-Image' },
+            { name: '图像提高', route: 'Enhance-Image' },
+            { name: '图像灰度', route: 'Grayscale-Image' },
+            { name: '图像HSL', route: 'HSL-Image' },
+            { name: '图像HSV', route: 'HSV-Image' },
+            { name: '图像RGB', route: 'RGB-Image' },
+            { name: '图像Invert', route: 'Invert-Image' },
+            { name: '图像Kaleid', route: 'Kaleidoscope-Image' },
+            { name: '图像Mask', route: 'Mask-Image' },
+            { name: '图像Noise', route: 'Noise-Image' },
+            { name: '图像Pixelate', route: 'Pixelate-Image' },
+            { name: '图像Multiple', route: 'Multiple-Image' }
+          ]
+        },
+        {
+          name: '补间模块',
+          route: 'TWEENS',
+          childrens: [
+            { name: '普通动画', route: 'Common-Easing' },
+            { name: '结合鼠标事件', route: 'Linear-Easing' },
+            { name: '动画数组', route: 'All-Easing' },
+            { name: '动画完成事件', route: 'Finish-Event' },
+            { name: '动画所有事件', route: 'All-Controls' },
+            { name: '动画滤镜渐变', route: 'Tween-Filter' }
+          ]
+        },
+        {
+          name: '动画模块',
+          route: 'ANIMATIONS',
+          childrens: [
+            { name: '普通动画', route: 'Animate-Position' },
+            { name: '旋转动画', route: 'Rotation-Animation' },
+            { name: '反转动画', route: 'Scale-Animation' },
+            { name: '动画暂停', route: 'Stop-Animation' }
+          ]
+        },
+        {
+          name: '序列化及导出',
+          route: 'EXPORT',
+          childrens: [
+            { name: '序列化', route: 'Save-Stage' },
+            { name: '反序列化', route: 'Simple-Load' },
+            { name: '导出为图片', route: 'Stage-Data-URL' }
+          ]
+        },
+        {
+          name: '提升性能',
+          route: 'PERFORMANCE',
+          childrens: [
+            { name: '使用缓存', route: 'Shape-Caching' },
+            { name: '动画优化', route: 'Optimizing-Strokes' },
+            { name: '重绘', route: 'Shape-Redraw' },
+            { name: 'Disable-Perfect-Drawing', route: 'Disable-Perfect-Drawing' },
+            { name: '节点删除', route: 'Avoid-Memory-Leaks' }
           ]
         }
         // （）
