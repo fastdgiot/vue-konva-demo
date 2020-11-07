@@ -9,7 +9,7 @@ export default {
       // canvas宽度
       canWidth: 0,
       // 页面canvas
-      pageStage: '',
+      pageStage: null,
       // canvas的图层列表
       pageLayer: []
     }

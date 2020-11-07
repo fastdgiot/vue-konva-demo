@@ -115,6 +115,21 @@ export default {
             { name: '基础裁剪', route: 'Simple-Clipping' },
             { name: '剪切方法', route: 'Clipping-Function' }
           ]
+        },
+        {
+          name: '图层模块',
+          route: 'CLIPPING',
+          childrens: [
+            { name: '分层', route: 'Shape-Layering' },
+            { name: '更换容器', route: 'Move-Shape-to-Another-Container' }
+          ]
+        },
+        {
+          name: '过滤器',
+          route: 'FILTERS',
+          childrens: [
+            { name: '图像模糊', route: 'Blur-Image' }
+          ]
         }
         // （）
       ]
